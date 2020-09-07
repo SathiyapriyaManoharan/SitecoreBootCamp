@@ -1,0 +1,13 @@
+﻿
+@model Feature.Website.Models.ProductCompareModel
+
+<div class="product-compare column-splitter">
+    <h2>Product Compare</h2>
+    @foreach (var product in Model.Products)
+    {
+        <div id="pc-@product.SellableItemId" class="col-xs-3">
+            @Html.Partial("~/Views/Commerce/ProductCompare/_ProductComparePanel.cshtml", product)
+        </div>
+    }
+</div>
+<script src="/Scripts/Commerce/Feature/ProductCompare/feature.compare.removeCompareButton.js"></script>

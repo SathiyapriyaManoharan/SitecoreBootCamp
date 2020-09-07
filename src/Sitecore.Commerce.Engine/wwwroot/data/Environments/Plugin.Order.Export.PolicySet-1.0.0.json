@@ -1,0 +1,17 @@
+﻿{
+  "$type": "Sitecore.Commerce.Core.PolicySet, Sitecore.Commerce.Core",
+  "Id": "Entity-PolicySet-OrderExportPolicySet",
+  "Version": 1,
+  "IsPersisted": false,
+  "Name": "OrderExportPolicySet",
+  "Policies": {
+    "$type": "System.Collections.Generic.List`1[[Sitecore.Commerce.Core.Policy, Sitecore.Commerce.Core]], mscorlib",
+    "$values": [
+      {
+        "$type": "Plugin.Bootcamp.Exercises.Order.Export.Policies.OrderExportPolicy, Plugin.Bootcamp.Exercises.Order.Export.Policies",
+        "ExportLocation": "C:\\temp\\"
+
+      }
+    ]
+  }
+}

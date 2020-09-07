@@ -1,0 +1,49 @@
+
+@using System.Web.Mvc.Ajax
+@using System.Web.Mvc.Html
+@using Sitecore.XA.Foundation.MarkupDecorator.Extensions
+@using Sitecore.XA.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Commerce.XA.Foundation.Common.ExtensionMethods
+@using Sitecore.Mvc
+@model Feature.Website.Models.AddViewCompareButtonModel
+
+@{
+    var viewCompareLinkStyle = Model.IsProductInCompareList ? "" : "none";
+    var addToCompareLinkStyle = Model.IsProductInCompareList ? "none" : "";
+
+    if (!Model.IsValid)
+    {
+        return;
+    }
+
+    var addViewButtonLabel = Model.AddToCompareButtonText;
+    if(String.IsNullOrEmpty(addViewButtonLabel)){addViewButtonLabel = "Sample Button Text";}
+
+    var comparePageLink = Model.ComparePageLink;
+    if(String.IsNullOrEmpty(comparePageLink)){comparePageLink = "/Compare";}
+}
+
+    <div style="display: block; width: 100%; clear: both;">    
+        <div class="cxa-addtocart-component add-product-to-compare" style="display:@addToCompareLinkStyle; Margin: 10px 0px;">
+            @{ var formDisabledAttr = Model.IsEdit ? "disabled" : "";}
+            @using (Ajax.BeginForm("AddProductToCompareList", "ProductCompare", null, new AjaxOptions { OnBegin = "AddToCompareForm.SetAddButton", OnSuccess = "AddToCompareForm.OnSuccess", OnFailure = "AddToCompareForm.OnFailure", HttpMethod = "Post" }))
+            {
+                @Html.ValidationSummary(true)
+                @Html.Hidden("addToCompareProductId", Model.ProductId)
+                @Html.Hidden("addToCompareVariantId", Model.VariantId)
+                @Html.Hidden("addToCompareCatalogName", Model.CatalogName)
+                @Html.AntiForgeryToken()
+
+                <button type="submit" class="add-to-compare-btn" data-loading-text="@Model.AddingToCompareWaitText" style="width: 170px;" @formDisabledAttr>
+                    @addViewButtonLabel
+                </button>
+            }
+        </div>
+
+        <div class="view-product-compare" style="display:@viewCompareLinkStyle">
+            <h5>
+                <a href="@comparePageLink" style="float: left; clear: both; margin: 10px 0;">@Model.ViewCompareButtonText</a>
+            </h5>
+        </div>
+    </div>
+    <script src="/Scripts/Commerce/Feature/ProductCompare/feature.compare.addCompareButton.js"></script>

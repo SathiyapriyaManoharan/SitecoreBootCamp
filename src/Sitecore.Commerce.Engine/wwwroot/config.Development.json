@@ -1,0 +1,45 @@
+﻿{
+  "AppSettings": {
+    "EnvironmentName": "HabitatAuthoring",
+    "SitecoreIdentityServerUrl": "https://xp0-identityserver.dev.local",
+    "AntiForgeryEnabled": false
+  },
+  "Logging": {
+    "IncludeScopes": false,
+    "LogLevel": {
+      "Default": "Information",
+      "System": "Information",
+      "Microsoft": "Information"
+    },
+    "SerilogLoggingEnabled": true,
+    "PipelineTraceLoggingEnabled": false
+  },
+  "Serilog": {
+    "MinimumLevel": {
+      "Default": "Information",
+      "Override": {
+        "Microsoft": "Information",
+        "System": "Information"
+      }
+    },
+    "WriteTo": [
+      {
+        "Name": "Async",
+        "Args": {
+          "configure": [
+            {
+              "Name": "LiterateConsole"
+            }
+          ]
+        }
+      },
+      {
+        "Name": "ApplicationInsights",
+        "Args": {
+          "restrictedToMinimumLevel": "Information",
+          "telemetryConverter": "Serilog.Sinks.ApplicationInsights.Sinks.ApplicationInsights.TelemetryConverters.TraceTelemetryConverter, Serilog.Sinks.ApplicationInsights"
+        }
+      }
+    ]
+  }
+}

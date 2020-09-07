@@ -1,0 +1,19 @@
+﻿{
+  "$type": "Sitecore.Commerce.Core.PolicySet, Sitecore.Commerce.Core",
+  "Id": "Entity-PolicySet-CustomOrderNumberPolicySet",
+  "Version": 1,
+  "IsPersisted": false,
+  "Name": "CustomOrderNumberPolicySet",
+  "Policies": {
+    "$type": "System.Collections.Generic.List`1[[Sitecore.Commerce.Core.Policy, Sitecore.Commerce.Core]], mscorlib",
+    "$values": [
+      {
+        "$type": "Plugin.Bootcamp.Exercises.Order.ConfirmationNumber.Policies.OrderNumberPolicy, Plugin.Bootcamp.Exercises.Order.ConfirmationNumber.Policies",
+        "Prefix": "Bootcamp",
+        "Suffix": "Habitat",
+        "IncludedDate": true
+
+      }
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "$type": "Sitecore.Commerce.Core.PolicySet, Sitecore.Commerce.Core",
+  "Id": "Entity-PolicySet-USPSPolicySet",
+  "Version": 1,
+  "IsPersisted": false,
+  "Name": "USPSPolicySet",
+  "Policies": {
+    "$type": "System.Collections.Generic.List`1[[Sitecore.Commerce.Core.Policy, Sitecore.Commerce.Core]], mscorlib",
+    "$values": [
+      {
+        "$type": "Plugin.Bootcamp.Sample.USPS.Policies.USPSPolicy, Plugin.Bootcamp.Sample.USPS",
+        "DebugMode": true,
+        "UserId": "[[REPLACE WITH YOUR ID]]",
+        "Url": "https://secure.shippingapis.com/ShippingApi.dll?API=Verify&XML="
+      }
+    ]
+  }
+}
