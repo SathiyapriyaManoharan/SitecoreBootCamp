@@ -23,7 +23,7 @@ namespace Plugin.Bootcamp.Exercises.VatTax.EntityViews
         {
             Contract.Requires(context != null);
 
-            /* STUDENT: Add the necessary code to remove the selected Vat Tax configuration */
+            /* Necessary code to remove the selected Vat Tax configuration */
             if (entityView == null
                || !entityView.Action.Equals("VatTaxDashboard-RemoveDashboardEntity", StringComparison.OrdinalIgnoreCase))
             {

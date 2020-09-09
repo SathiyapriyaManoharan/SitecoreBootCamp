@@ -25,8 +25,7 @@ namespace Plugin.Bootcamp.Exercises.Order.Export.Minions
         protected override async Task<MinionRunResultsModel> Execute()
         {
             MinionRunResultsModel runResults = new MinionRunResultsModel();
-            /* STUDENT: Complete the body of this method. You need to pull from an appropriate list
-             * and then execute an appropriate pipeline. */
+            /* Pull from an appropriate list and execute an appropriate pipeline. */
 
             /*Gets list of Items from ReleasedOrders and executes export order to file block*/
             long listCount = await this.GetListCount(this.Policy.ListToWatch).ConfigureAwait(false);
@@ -45,8 +44,6 @@ namespace Plugin.Bootcamp.Exercises.Order.Export.Minions
                 }
 
             }
-
-
 
             return runResults;
         }

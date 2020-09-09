@@ -18,13 +18,14 @@ namespace Plugin.Bootcamp.Exercises.Catalog.WarrantyInformation.Pipelines.Blocks
             Condition.Requires(arg).IsNotNull($"{Name}: The argument cannot be null.");
             var catalogViewsPolicy = context.GetPolicy<KnownCatalogViewsPolicy>();
 
+            /*Various Views */
+
             var isVariationView = arg.Name.Equals(catalogViewsPolicy.Variant, StringComparison.OrdinalIgnoreCase);
             var isDetailView = arg.Name.Equals(catalogViewsPolicy.Master, StringComparison.OrdinalIgnoreCase);
             var isWarrantyNotesView = arg.Name.Equals("Warranty Notes", StringComparison.OrdinalIgnoreCase);
             var isConnectView = arg.Name.Equals(catalogViewsPolicy.ConnectSellableItem, StringComparison.OrdinalIgnoreCase);
             var request = context.CommerceContext.GetObject<EntityViewArgument>();
 
-            /* STUDENT: Complete the Run method as specified in the requirements */
 
             if (string.IsNullOrEmpty(arg.Name) || !isDetailView && !isWarrantyNotesView && !isVariationView && !isConnectView)
             {
@@ -36,6 +37,7 @@ namespace Plugin.Bootcamp.Exercises.Catalog.WarrantyInformation.Pipelines.Blocks
                 return Task.FromResult(arg);
             }
 
+            /*Check for Sellable Item*/
             var sellableItem = (SellableItem)request.Entity;
 
             var variationId = string.Empty;
@@ -47,9 +49,11 @@ namespace Plugin.Bootcamp.Exercises.Catalog.WarrantyInformation.Pipelines.Blocks
 
             var isEditView = !string.IsNullOrEmpty(arg.Action) && arg.Action.Equals("WarrantyNotes-Edit", StringComparison.OrdinalIgnoreCase);
 
-
+            /*Check if the Warranty Notes EntityView is in Edit Mode*/
 
             var componentView = arg;
+
+            /*If Warranty Notes is not in Edit View*/
             if (!isEditView)
             {
                 componentView = new EntityView
@@ -57,7 +61,7 @@ namespace Plugin.Bootcamp.Exercises.Catalog.WarrantyInformation.Pipelines.Blocks
                     Name = "Warranty Notes",
                     DisplayName = "Warranty Information",
                     EntityId = arg.EntityId,
-                    EntityVersion = request.EntityVersion == null? 1:(int)request.EntityVersion,
+                    EntityVersion = request.EntityVersion == null ? 1 : (int)request.EntityVersion,
                     ItemId = variationId
                 };
 
@@ -68,6 +72,8 @@ namespace Plugin.Bootcamp.Exercises.Catalog.WarrantyInformation.Pipelines.Blocks
             {
                 System.Diagnostics.Debug.WriteLine($"Get Entity ViewBlock in edit View. Version from argument is {arg.EntityId}");
             }
+
+            /*If Warranty Notes Component is in Edit View*/
 
             if (sellableItem != null && (sellableItem.HasComponent<WarrantyNotesComponent>(variationId) || isConnectView || isEditView))
             {

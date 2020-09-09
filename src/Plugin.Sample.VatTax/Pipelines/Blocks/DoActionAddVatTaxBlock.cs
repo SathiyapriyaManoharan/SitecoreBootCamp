@@ -26,7 +26,7 @@ namespace Plugin.Bootcamp.Exercises.VatTax.EntityViews
         {
             Contract.Requires(context != null);
 
-            /* STUDENT: Complete this method by adding the code to save a new Vat Tax configuration item */
+            /* Adding the code to save a new Vat Tax configuration item */
             if (entityView == null
                 || !entityView.Action.Equals("VatTaxDashboard-AddDashboardEntity", StringComparison.OrdinalIgnoreCase))
             {

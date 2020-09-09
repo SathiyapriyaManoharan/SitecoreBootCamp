@@ -17,7 +17,7 @@ namespace Plugin.Bootcamp.Exercises.VatTax.EntityViews
 
             Condition.Requires(entityView).IsNotNull($"{this.Name}: The argument cannot be null");
 
-            /* STUDENT: Add the necessary code to show your new Vat Tax dashboard in the Business Tools navigation */
+            /* Necessary code to show your new Vat Tax dashboard in the Business Tools navigation */
             if (entityView.Name != "ToolsNavigation")
             {
                 return Task.FromResult(entityView);
@@ -32,8 +32,6 @@ namespace Plugin.Bootcamp.Exercises.VatTax.EntityViews
                 Icon = pluginPolicy.Icon,
                 ItemId = "VatTaxDashboard"
             };
-
-           
 
             entityView.ChildViews.Add(newEntityView);
 

@@ -9,7 +9,7 @@ namespace Plugin.Bootcamp.Exercises.Promotions
     [EntityIdentifier("MinTemperatureCondition")]
     public class MinTemperatureCondition : ICartsCondition
     {
-        /* STUDENT: Add IRuleValue properties for the city, country, and
+        /* IRuleValue properties for the city, country, and
          * minimum temperature.
          */
         public IRuleValue<Decimal> MinimumTemperature { get; set; }
@@ -18,17 +18,16 @@ namespace Plugin.Bootcamp.Exercises.Promotions
 
         public bool Evaluate(IRuleExecutionContext context)
         {
-            /* STUDENT: Complete the Evaluate method to:
-             * Retrieve the current temperature
-             * Compare it to the temperature stored in the Policy
-             * Return the result of that comparison
-             */
+
             var minimumTemperature = MinimumTemperature.Yield(context);
             var city = City.Yield(context);
             var country = Country.Yield(context);
 
-            // STUDENT: Replace this line. It is only provided so the stub 
-            // project will build cleanly
+            /* Complete the Evaluate method to:
+            * Retrieve the current temperature
+            * Compare it to the temperature stored in the Policy
+            * Return the result of that comparison
+            */
             CommerceContext commerceContext = context.Fact<CommerceContext>((string)null);
             var weatherServicePolicy = commerceContext.GetPolicy<WeatherServiceClientPolicy>();
 
@@ -37,15 +36,17 @@ namespace Plugin.Bootcamp.Exercises.Promotions
             if (currentTemperature > minimumTemperature)
                 return true;
             else
-                return false;           
+                return false;
         }
+
+        /*Retrieve the current temperature from Weather Service*/
 
         public decimal GetCurrentTemperature(string city, string country, string applicationId)
         {
             WeatherService weatherService = new WeatherService(applicationId);
             var temperature = weatherService.GetCurrentTemperature(city, country).Result;
 
-            return (decimal) temperature.Max;
+            return (decimal)temperature.Max;
         }
     }
 }

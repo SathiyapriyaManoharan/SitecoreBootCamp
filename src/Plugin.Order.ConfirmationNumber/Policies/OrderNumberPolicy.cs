@@ -6,21 +6,19 @@ namespace Plugin.Bootcamp.Exercises.Order.ConfirmationNumber.Policies
     {
         public OrderNumberPolicy()
         {
+            /* Properties for the Order Confirmation Number*/
 
             this.Prefix = string.Empty;
             this.Suffix = string.Empty;
             this.IncludedDate = false;
 
-            /* STUDENT: Complete the constructor to initialize the properties */
-
         }
 
+        /* Read/Write Properties for the Order Confirmation Number */
         public string Prefix { get; set; }
         public string Suffix { get; set; }
         public bool IncludedDate { get; set; }
 
     }
-    /* STUDENT: Add read/write properties as specified in the requirements */
-
 
 }

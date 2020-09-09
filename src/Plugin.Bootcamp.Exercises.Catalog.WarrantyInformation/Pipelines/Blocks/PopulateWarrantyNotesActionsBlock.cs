@@ -18,7 +18,7 @@ namespace Plugin.Bootcamp.Exercises.Catalog.WarrantyInformation.Pipelines.Blocks
         {
             Condition.Requires(arg).IsNotNull($"{Name}: The argument cannot be null.");
 
-            /* STUDENT: Complete the Run method as specified in the requirements */
+            /*Check if Warranty Notes View present*/
             if (string.IsNullOrEmpty(arg?.Name) || !arg.Name.Equals("Warranty Notes", StringComparison.OrdinalIgnoreCase))
             {
                 return Task.FromResult(arg);
@@ -26,6 +26,7 @@ namespace Plugin.Bootcamp.Exercises.Catalog.WarrantyInformation.Pipelines.Blocks
 
             var actionPolicy = arg.GetPolicy<ActionsPolicy>();
 
+            /*Action View on click of the Warranty Information Entity*/
             actionPolicy.Actions.Add(
             new EntityActionView
             {

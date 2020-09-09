@@ -17,7 +17,7 @@ namespace Plugin.Bootcamp.Exercises.VatTax.EntityViews
 
             Condition.Requires(entityView).IsNotNull($"{this.Name}: The argument cannot be null");
 
-            /* STUDENT: Add the necessary code to add the add and remove actions to the table on the Vat Tax dashboard */
+            /* Necessary code to add and remove actions to the table on the Vat Tax dashboard */
             if (entityView.Name != "VatTaxDashboard")
             {
                 return Task.FromResult(entityView);

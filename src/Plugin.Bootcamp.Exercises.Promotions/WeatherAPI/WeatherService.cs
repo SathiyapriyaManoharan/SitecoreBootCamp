@@ -16,6 +16,7 @@ namespace Plugin.Bootcamp.Exercises.Promotions
             this.applicationId = applicationId;
         }
 
+        /* Get Current Temperature of the City using the Open Weather Map*/
         public async Task<Temperature> GetCurrentTemperature(string city, string country)
         {
             var client = new OpenWeatherMapClient(this.applicationId);

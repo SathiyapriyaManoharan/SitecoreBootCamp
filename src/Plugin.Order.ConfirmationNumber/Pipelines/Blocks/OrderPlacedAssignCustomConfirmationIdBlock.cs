@@ -18,23 +18,27 @@ namespace Plugin.Bootcamp.Exercises.Order.ConfirmationNumber.Blocks
 
             Contract.Requires(arg != null);
             Contract.Requires(context != null);
-            /* STUDENT: Complete this method to set the order number as specified in the requirements */
+            /* Block to set the Order Confirmation ID */
             Condition.Requires(arg).IsNotNull($"{this.Name}: The Order cannot be null");
             OrderPlacedAssignCustomConfirmationIdBlock confirmationIdBlock = this;
-            string uniqueGuid;
+
+            /*Unique Code for each order placed*/
+            string UniqueCode;
             try
             {
-                uniqueGuid = GetCustomOrder(context);
+                UniqueCode = GetCustomOrder(context);
             }
             catch (Exception ex)
             {
                 context.CommerceContext.LogException((confirmationIdBlock.Name) + "UniqueCodeException", ex);
                 throw;
             }
-            arg.OrderConfirmationId = uniqueGuid;
+            arg.OrderConfirmationId = UniqueCode;
             return Task.FromResult<Sitecore.Commerce.Plugin.Orders.Order>(arg);
 
         }
+
+        /*Custome Order is created based on the OrderNumberPolicy with OrderNumber Components*/
         private string GetCustomOrder(CommercePipelineExecutionContext context)
         {
             var policy = context.GetPolicy<OrderNumberPolicy>();
