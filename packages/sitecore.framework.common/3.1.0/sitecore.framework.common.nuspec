@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Sitecore.Framework.Common</id>
+    <version>3.1.0</version>
+    <authors>Sitecore Corporation A/S</authors>
+    <owners>Sitecore Corporation A/S</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://doc.sitecore.net/~/media/C23E989268EC4FA588108F839675A5B6.pdf</licenseUrl>
+    <projectUrl>http://doc.sitecore.net/</projectUrl>
+    <iconUrl>https://mygetwwwsitecoreeu.blob.core.windows.net/feedicons/sc-packages.png</iconUrl>
+    <description>Sitecore.Framework.Common Class Library</description>
+    <releaseNotes>Build: 3.1.0 SHA: c3269e037a3ba762e4ec93f2da60055a87cf1b54</releaseNotes>
+    <tags>Sitecore Common</tags>
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Sitecore.Framework.Common.Abstractions" version="3.1.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

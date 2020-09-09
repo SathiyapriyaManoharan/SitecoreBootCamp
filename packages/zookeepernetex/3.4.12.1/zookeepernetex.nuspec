@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>ZooKeeperNetEx</id>
+    <version>3.4.12.1</version>
+    <authors>Shay Hazor</authors>
+    <owners>Shay Hazor</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectUrl>https://github.com/shayhatsor/zookeeper</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/shayhatsor/zookeeper/trunk/zookeeper.bmp</iconUrl>
+    <description>A .NET async Client fully compliant with ZooKeeper, supporting all features. Fully Task-based Asynchronous (async/await). A great measure has been taken to follow the logic of the official Java client, including all relevant unit tests. In fact, the code is almost identical. Thus allowing easy evolution alongside the Java version.</description>
+    <releaseNotes>This project is actively maintained at: https://github.com/shayhatsor/zookeeper 
+Please feel free to open an issue or ask a question there.</releaseNotes>
+    <copyright>© Shay Hazor</copyright>
+    <tags>ZooKeeper .NET Client Async</tags>
+    <repository type="git" url="https://github.com/shayhatsor/zookeeper" commit="2e3fd3be514b45ff57d5f0fcb0a664e3c01d31f9" />
+    <dependencies>
+      <group targetFramework=".NETStandard1.3">
+        <dependency id="NETStandard.Library" version="1.6.1" exclude="Build,Analyzers" />
+        <dependency id="System.Diagnostics.TraceSource" version="4.3.0" exclude="Build,Analyzers" />
+        <dependency id="System.Net.NameResolution" version="4.3.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

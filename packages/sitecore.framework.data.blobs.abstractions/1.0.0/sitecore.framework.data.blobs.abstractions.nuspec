@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Sitecore.Framework.Data.Blobs.Abstractions</id>
+    <version>1.0.0</version>
+    <authors>Sitecore Corporation A/S.</authors>
+    <owners>Sitecore Corporation A/S.</owners>
+    <language>en-US</language>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <license type="file">Sitecore.Myget.Licence.md</license>
+    <projectUrl>http://doc.sitecore.net</projectUrl>
+    <iconUrl>https://mygetwwwsitecoreeu.blob.core.windows.net/feedicons/sc-packages.png</iconUrl>
+    <description>Blob Provider abstractions for the Sitecore Framework</description>
+    <copyright>© 2019 Sitecore Corporation A/S. All rights reserved. Sitecore® is a registered trademark of Sitecore Corporation A/S.</copyright>
+    <tags>Sitecore BlobStorage Blob Storage</tags>
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Sitecore.Framework.Conditions" version="4.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

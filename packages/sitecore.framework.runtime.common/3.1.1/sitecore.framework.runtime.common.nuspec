@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Sitecore.Framework.Runtime.Common</id>
+    <version>3.1.1</version>
+    <authors>Sitecore Corporation A/S.</authors>
+    <owners>Sitecore Corporation A/S.</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://mygetwwwsitecoreeu.blob.core.windows.net/feedicons/sc-packages.png</iconUrl>
+    <description>Common code for the Sitecore Framework Runtime</description>
+    <releaseNotes>Build: 3.1.1 'GitSHA: b418b1afe589a31a2e3ad35185de7a4253092d10</releaseNotes>
+    <copyright>© 2018 Sitecore Corporation A/S. All rights reserved. Sitecore® is a registered trademark of Sitecore Corporation A/S.</copyright>
+    <tags>Sitecore Runtime</tags>
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Sitecore.Framework.Conditions" version="3.1.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

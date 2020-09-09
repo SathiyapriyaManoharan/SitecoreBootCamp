@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Sdk Name="Microsoft.Build.CentralPackageVersions" />
+
+  <PropertyGroup>
+    <Description>Core Eventing infrastructure for the Sitecore Framework</Description>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <Configurations>Debug;Release;Escrow</Configurations>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Sitecore.Framework.Eventing.Abstractions\Sitecore.Framework.Eventing.Abstractions.csproj" />
+    <ProjectReference Include="..\Sitecore.Framework.Eventing.Common\Sitecore.Framework.Eventing.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Reactive" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" />
+    <PackageReference Include="Sitecore.Framework.Configuration.Abstractions" />
+  </ItemGroup>
+
+</Project>

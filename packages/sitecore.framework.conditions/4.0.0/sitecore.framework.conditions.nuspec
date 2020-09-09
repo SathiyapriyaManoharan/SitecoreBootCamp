@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Sitecore.Framework.Conditions</id>
+    <version>4.0.0</version>
+    <authors>Sitecore Corporation A/S.</authors>
+    <owners>Sitecore Corporation A/S.</owners>
+    <language>en-US</language>
+    <license type="file">Sitecore.Myget.Licence.md</license>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <projectUrl>http://doc.sitecore.net</projectUrl>
+    <iconUrl>https://mygetwwwsitecoreeu.blob.core.windows.net/feedicons/sc-packages.png</iconUrl>
+    <description>Code contracts and conditions for the Sitecore Framework</description>
+    <copyright>© 2019 Sitecore Corporation A/S. All rights reserved. Sitecore® is a registered trademark of Sitecore Corporation A/S.</copyright>
+    <tags>Sitecore Conditions</tags>
+    <dependencies>
+      <group targetFramework=".NETStandard2.0" />
+    </dependencies>
+  </metadata>
+</package>

@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Sdk Name="Microsoft.Build.CentralPackageVersions" />
+
+  <PropertyGroup>
+    <Description>Caching for the Sitecore Framework</Description>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <Configurations>Debug;Release;Escrow</Configurations>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Sitecore.Framework.Caching.Abstractions\Sitecore.Framework.Caching.Abstractions.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" />
+    <PackageReference Include="Sitecore.Framework.Configuration.Abstractions" />
+    <PackageReference Include="Sitecore.Framework.Common.MatchingOptions" />
+    <PackageReference Include="Sitecore.Framework.Common.WildcardMatch" />
+  </ItemGroup>
+
+
+</Project>

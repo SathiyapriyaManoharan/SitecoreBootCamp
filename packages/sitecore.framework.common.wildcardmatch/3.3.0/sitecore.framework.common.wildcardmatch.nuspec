@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Sitecore.Framework.Common.WildcardMatch</id>
+    <version>3.3.0</version>
+    <authors>Sitecore Corporation A/S.</authors>
+    <owners>Sitecore Corporation A/S.</owners>
+    <language>en-US</language>
+    <license type="file">Sitecore.Myget.Licence.md</license>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <projectUrl>http://doc.sitecore.net</projectUrl>
+    <iconUrl>https://mygetwwwsitecoreeu.blob.core.windows.net/feedicons/sc-packages.png</iconUrl>
+    <description>Sitecore.Framework.Common.WildcardMatch Class Library</description>
+    <copyright>© 2019 Sitecore Corporation A/S. All rights reserved. Sitecore® is a registered trademark of Sitecore Corporation A/S.</copyright>
+    <tags>Sitecore Common WildcardMatch</tags>
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Sitecore.Framework.Common" version="3.3.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>
